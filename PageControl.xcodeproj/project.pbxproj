@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6B37AB0D1BAAE15500460AF7 /* PageControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B37AB0C1BAAE15500460AF7 /* PageControl.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6B37AB141BAAE15500460AF7 /* PageControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B37AB091BAAE15500460AF7 /* PageControl.framework */; settings = {ASSET_TAGS = (); }; };
 		6B37AB191BAAE15500460AF7 /* PageControlTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B37AB181BAAE15500460AF7 /* PageControlTests.swift */; };
 		6B37AB241BAAE18C00460AF7 /* PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B37AB231BAAE18C00460AF7 /* PageControl.swift */; settings = {ASSET_TAGS = (); }; };
@@ -25,7 +24,6 @@
 
 /* Begin PBXFileReference section */
 		6B37AB091BAAE15500460AF7 /* PageControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PageControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6B37AB0C1BAAE15500460AF7 /* PageControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PageControl.h; sourceTree = "<group>"; };
 		6B37AB0E1BAAE15500460AF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6B37AB131BAAE15500460AF7 /* PageControlTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PageControlTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B37AB181BAAE15500460AF7 /* PageControlTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControlTests.swift; sourceTree = "<group>"; };
@@ -73,7 +71,6 @@
 		6B37AB0B1BAAE15500460AF7 /* PageControl */ = {
 			isa = PBXGroup;
 			children = (
-				6B37AB0C1BAAE15500460AF7 /* PageControl.h */,
 				6B37AB231BAAE18C00460AF7 /* PageControl.swift */,
 				6B37AB0E1BAAE15500460AF7 /* Info.plist */,
 			);
@@ -96,7 +93,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6B37AB0D1BAAE15500460AF7 /* PageControl.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
