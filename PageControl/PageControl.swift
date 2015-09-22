@@ -6,6 +6,9 @@ public class PageControl: UIControl {
     
     // MARK: - Interface
     
+    /// The current page, diplayed as a filled circle.
+    ///
+    /// The default value is 0.
     @IBInspectable
     public var currentPage: Int {
         get {
@@ -16,12 +19,16 @@ public class PageControl: UIControl {
         }
     }
     
+    /// The current page, diplayed as a filled or partially filled circle.
     public func setCurrentPage(currentPage: CGFloat, animated: Bool = false) {
         let newPage = max(0, min(currentPage, CGFloat(numberOfPages - 1)))
         _currentPage = newPage
         updateCurrentPageDisplayWithAnimation(animated)
     }
     
+    /// The number of page indicators to display.
+    ///
+    /// The default value is 0.
     @IBInspectable
     public var numberOfPages: Int = 0 {
         didSet {
@@ -41,6 +48,9 @@ public class PageControl: UIControl {
         }
     }
 
+    /// Hides the page control when there is only one page.
+    ///
+    /// The default is `false`.
     @IBInspectable
     public var hidesForSinglePage: Bool = false {
         didSet {
@@ -48,13 +58,19 @@ public class PageControl: UIControl {
         }
     }
     
+    /// Controls when the current page will update.
+    ///
+    /// The default is `false`.
     @IBInspectable
     public var defersCurrentPageDisplay: Bool = false
     
+    /// Updates the current page indicator to the current page.
+    /// 
     public func updateCurrentPageDisplay() {
         updateCurrentPageDisplayWithAnimation()
     }
 
+    /// Use to size the control to fit a certain number of pages.
     public func sizeForNumberOfPages(pageCount: Int) -> CGSize {
         let width = pageIndicatorSize * CGFloat(pageCount) + pageIndicatorSpacing * CGFloat(max(0, pageCount - 1))
         return CGSize(width: max(7, width), height: defaultControlHeight)
@@ -62,9 +78,15 @@ public class PageControl: UIControl {
     
     // MARK: - Tint Color Overrides
 
+    /// When set this property overrides the page indicator border color.
+    ///
+    /// The default is the control's `tintColor`.
     @IBInspectable
     public var pageIndicatorTintColor: UIColor?
     
+    /// When set this property overrides the current page indicator's fill color.
+    ///
+    /// The default is the control's `tintColor`.
     @IBInspectable
     public var currentPageIndicatorTintColor: UIColor?
     
