@@ -15,11 +15,13 @@ public class PageControl: UIControl {
             setCurrentPage(CGFloat(newValue), animated: true)
         }
     }
+    
     public func setCurrentPage(currentPage: CGFloat, animated: Bool = false) {
         let newPage = max(0, min(currentPage, CGFloat(numberOfPages - 1)))
         _currentPage = newPage
         updateCurrentPageDisplayWithAnimation(animated)
     }
+    
     @IBInspectable
     public var numberOfPages: Int = 0 {
         didSet {
@@ -38,27 +40,34 @@ public class PageControl: UIControl {
             setCurrentPage(_currentPage, animated: false)
         }
     }
+
     @IBInspectable
     public var hidesForSinglePage: Bool = false {
         didSet {
             hidden = hidesForSinglePage && numberOfPages <= 1
         }
     }
+    
     @IBInspectable
     public var defersCurrentPageDisplay: Bool = false
+    
     public func updateCurrentPageDisplay() {
         updateCurrentPageDisplayWithAnimation()
     }
+
     public func sizeForNumberOfPages(pageCount: Int) -> CGSize {
         let width = pageIndicatorSize * CGFloat(pageCount) + pageIndicatorSpacing * CGFloat(max(0, pageCount - 1))
         return CGSize(width: max(7, width), height: defaultControlHeight)
     }
+    
     // MARK: - Tint Color Overrides
 
     @IBInspectable
     public var pageIndicatorTintColor: UIColor?
+    
     @IBInspectable
     public var currentPageIndicatorTintColor: UIColor?
+    
     // MARK: - Private
     
     private var _currentPage: CGFloat = -1
