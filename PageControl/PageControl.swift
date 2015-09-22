@@ -1,5 +1,6 @@
 import UIKit
 
+/// - SeeAlso: `UIPageControl`
 @IBDesignable
 public class PageControl: UIControl {
     
