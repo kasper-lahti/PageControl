@@ -2,6 +2,9 @@ import UIKit
 
 /// The `PageControl` displays a horizontal arrangement of circle outlines, each representing a page or section in your app. The currently viewed page is indicated by a filled circle.
 ///
+/// When `setCurrentPage()` method is called with the animated parameter set to `true` the current page indicator will move to the new page with an animation.
+/// This method can be used together with a `UIScrollViewDelegate`'s `scrollViewDidScroll` method to update the current page indicator continuously as the user swipes through your app's pages.
+///
 /// - SeeAlso: `UIPageControl`
 @IBDesignable
 public class PageControl: UIControl {
