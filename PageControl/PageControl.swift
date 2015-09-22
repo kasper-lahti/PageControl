@@ -6,6 +6,7 @@ public class PageControl: UIControl {
     
     // MARK: - Interface
     
+    @IBInspectable
     public var currentPage: Int {
         get {
             return Int(_currentPage)
@@ -19,6 +20,7 @@ public class PageControl: UIControl {
         _currentPage = newPage
         updateCurrentPageDisplayWithAnimation(animated)
     }
+    @IBInspectable
     public var numberOfPages: Int = 0 {
         didSet {
             hidden = hidesForSinglePage && numberOfPages <= 1
@@ -36,11 +38,13 @@ public class PageControl: UIControl {
             setCurrentPage(_currentPage, animated: false)
         }
     }
+    @IBInspectable
     public var hidesForSinglePage: Bool = false {
         didSet {
             hidden = hidesForSinglePage && numberOfPages <= 1
         }
     }
+    @IBInspectable
     public var defersCurrentPageDisplay: Bool = false
     public func updateCurrentPageDisplay() {
         updateCurrentPageDisplayWithAnimation()
@@ -51,7 +55,9 @@ public class PageControl: UIControl {
     }
     // MARK: - Tint Color Overrides
 
+    @IBInspectable
     public var pageIndicatorTintColor: UIColor?
+    @IBInspectable
     public var currentPageIndicatorTintColor: UIColor?
     // MARK: - Private
     
