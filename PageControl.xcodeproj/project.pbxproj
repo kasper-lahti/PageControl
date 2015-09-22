@@ -7,9 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6B1D44E11BAD7DED007A8C36 /* PageControlParity5Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1D44E01BAD7DED007A8C36 /* PageControlParity5Tests.swift */; settings = {ASSET_TAGS = (); }; };
+		6B1D44E31BADAA64007A8C36 /* PageControlParityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1D44E21BADAA64007A8C36 /* PageControlParityTests.swift */; settings = {ASSET_TAGS = (); }; };
+		6B1D44E51BADB2CC007A8C36 /* PageControlParity2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1D44E41BADB2CC007A8C36 /* PageControlParity2Tests.swift */; settings = {ASSET_TAGS = (); }; };
 		6B37AB141BAAE15500460AF7 /* PageControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B37AB091BAAE15500460AF7 /* PageControl.framework */; settings = {ASSET_TAGS = (); }; };
-		6B37AB191BAAE15500460AF7 /* PageControlTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B37AB181BAAE15500460AF7 /* PageControlTests.swift */; };
 		6B37AB241BAAE18C00460AF7 /* PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B37AB231BAAE18C00460AF7 /* PageControl.swift */; settings = {ASSET_TAGS = (); }; };
+		6B6C3CE41BAF45BB00C86CF4 /* PageControlParity3Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6C3CE31BAF45BB00C86CF4 /* PageControlParity3Tests.swift */; settings = {ASSET_TAGS = (); }; };
+		6B6C3CE61BAFE31700C86CF4 /* PageControlParity4Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6C3CE51BAFE31700C86CF4 /* PageControlParity4Tests.swift */; settings = {ASSET_TAGS = (); }; };
+		6B6C3CF51BB1782D00C86CF4 /* PageControlTester.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B6C3CF41BB1782D00C86CF4 /* PageControlTester.xib */; settings = {ASSET_TAGS = (); }; };
+		6B6C3CF71BB17A4300C86CF4 /* PageControlXibTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6C3CF61BB17A4300C86CF4 /* PageControlXibTests.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,12 +29,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6B1D44E01BAD7DED007A8C36 /* PageControlParity5Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageControlParity5Tests.swift; sourceTree = "<group>"; };
+		6B1D44E21BADAA64007A8C36 /* PageControlParityTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageControlParityTests.swift; sourceTree = "<group>"; };
+		6B1D44E41BADB2CC007A8C36 /* PageControlParity2Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageControlParity2Tests.swift; sourceTree = "<group>"; };
 		6B37AB091BAAE15500460AF7 /* PageControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PageControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B37AB0E1BAAE15500460AF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6B37AB131BAAE15500460AF7 /* PageControlTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PageControlTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		6B37AB181BAAE15500460AF7 /* PageControlTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControlTests.swift; sourceTree = "<group>"; };
 		6B37AB1A1BAAE15500460AF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6B37AB231BAAE18C00460AF7 /* PageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageControl.swift; sourceTree = "<group>"; };
+		6B6C3CE31BAF45BB00C86CF4 /* PageControlParity3Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageControlParity3Tests.swift; sourceTree = "<group>"; };
+		6B6C3CE51BAFE31700C86CF4 /* PageControlParity4Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageControlParity4Tests.swift; sourceTree = "<group>"; };
+		6B6C3CF41BB1782D00C86CF4 /* PageControlTester.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PageControlTester.xib; sourceTree = "<group>"; };
+		6B6C3CF61BB17A4300C86CF4 /* PageControlXibTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageControlXibTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +92,13 @@
 		6B37AB171BAAE15500460AF7 /* PageControlTests */ = {
 			isa = PBXGroup;
 			children = (
-				6B37AB181BAAE15500460AF7 /* PageControlTests.swift */,
+				6B6C3CF61BB17A4300C86CF4 /* PageControlXibTests.swift */,
+				6B1D44E21BADAA64007A8C36 /* PageControlParityTests.swift */,
+				6B1D44E41BADB2CC007A8C36 /* PageControlParity2Tests.swift */,
+				6B6C3CE31BAF45BB00C86CF4 /* PageControlParity3Tests.swift */,
+				6B6C3CE51BAFE31700C86CF4 /* PageControlParity4Tests.swift */,
+				6B1D44E01BAD7DED007A8C36 /* PageControlParity5Tests.swift */,
+				6B6C3CF41BB1782D00C86CF4 /* PageControlTester.xib */,
 				6B37AB1A1BAAE15500460AF7 /* Info.plist */,
 			);
 			path = PageControlTests;
@@ -183,6 +201,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B6C3CF51BB1782D00C86CF4 /* PageControlTester.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,7 +220,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6B37AB191BAAE15500460AF7 /* PageControlTests.swift in Sources */,
+				6B1D44E51BADB2CC007A8C36 /* PageControlParity2Tests.swift in Sources */,
+				6B1D44E31BADAA64007A8C36 /* PageControlParityTests.swift in Sources */,
+				6B6C3CE61BAFE31700C86CF4 /* PageControlParity4Tests.swift in Sources */,
+				6B6C3CF71BB17A4300C86CF4 /* PageControlXibTests.swift in Sources */,
+				6B1D44E11BAD7DED007A8C36 /* PageControlParity5Tests.swift in Sources */,
+				6B6C3CE41BAF45BB00C86CF4 /* PageControlParity3Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,6 +403,7 @@
 				6B37AB1F1BAAE15500460AF7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6B37AB201BAAE15500460AF7 /* Build configuration list for PBXNativeTarget "PageControlTests" */ = {
 			isa = XCConfigurationList;
@@ -387,6 +412,7 @@
 				6B37AB221BAAE15500460AF7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
