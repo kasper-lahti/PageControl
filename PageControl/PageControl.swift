@@ -22,6 +22,9 @@ public class PageControl: UIControl {
     }
     
     /// The current page, diplayed as a filled or partially filled circle.
+    ///
+    /// - Parameter currentPage: The current page indicator is filled if the value is .0, and about half filled if ±.25.
+    /// - Parameter animated: `true` to animate the transition to the new page, `false` to make the transition immediate.
     public func setCurrentPage(currentPage: CGFloat, animated: Bool = false) {
         let newPage = max(0, min(currentPage, CGFloat(numberOfPages - 1)))
         _currentPage = newPage
