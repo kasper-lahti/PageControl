@@ -248,10 +248,6 @@ private extension PageControl {
     }
     
     func generatePageIndicators() {
-        for pageIndicatorView in pageIndicatorContainerView.subviews {
-            pageIndicatorView.removeFromSuperview()
-        }
-        
         for _ in 0..<numberOfPages {
             let view = UIView()
             pageIndicatorContainerView.addSubview(view)
