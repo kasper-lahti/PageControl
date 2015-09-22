@@ -29,6 +29,7 @@ public class PageControl: UIControl {
         let newPage = max(0, min(currentPage, CGFloat(numberOfPages - 1)))
         _currentPage = newPage
         updateCurrentPageDisplayWithAnimation(animated)
+        updateAccessibility()
     }
     
     /// The number of page indicators to display.
@@ -50,6 +51,7 @@ public class PageControl: UIControl {
             }
             
             setCurrentPage(_currentPage, animated: false)
+            updateAccessibility()
         }
     }
 
@@ -111,6 +113,8 @@ public class PageControl: UIControl {
     private let pageIndicatorSpacing: CGFloat = 9
     private let defaultControlHeight: CGFloat = 37
     
+    private let accessibilityPageControl = UIPageControl()
+
     // MARK: - Initialization
     
     override init(frame: CGRect) {
@@ -143,6 +147,7 @@ public class PageControl: UIControl {
         updateColors()
         
         updateCurrentPageDisplayWithAnimation(false)
+        updateAccessibility()
     }
 }
 
@@ -307,10 +312,25 @@ extension PageControl {
             }
             if !defersCurrentPageDisplay {
                 updateCurrentPageDisplayWithAnimation(true)
+                updateAccessibility()
             }
             sendActionsForControlEvents(UIControlEvents.ValueChanged)
         }
     }
 }
 
+// MARK: - Accessibility
+
+private extension PageControl {
+    func updateAccessibility() {
+        accessibilityPageControl.currentPage = currentPage
+        accessibilityPageControl.numberOfPages = numberOfPages
+        
+        isAccessibilityElement = accessibilityPageControl.isAccessibilityElement
+        accessibilityLabel = accessibilityPageControl.accessibilityLabel
+        accessibilityHint = accessibilityPageControl.accessibilityHint
+        accessibilityTraits = accessibilityPageControl.accessibilityTraits
+        accessibilityValue = accessibilityPageControl.accessibilityValue
+    }
+    
 }
