@@ -309,11 +309,11 @@ extension PageControl {
                 if _currentPage - floor(_currentPage) > 0.01 {
                     _currentPage = floor(_currentPage)
                 } else {
-                    _currentPage = floor(_currentPage) - 1
+                    _currentPage = max(0, floor(_currentPage) - 1)
                 }
             }
             else {
-                _currentPage = round(_currentPage + 1)
+                _currentPage = min(round(_currentPage + 1), CGFloat(numberOfPages - 1))
             }
             if !defersCurrentPageDisplay {
                 updateCurrentPageDisplayWithAnimation(true)
