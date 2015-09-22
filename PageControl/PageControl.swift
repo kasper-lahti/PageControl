@@ -188,6 +188,8 @@ extension PageControl {
         pageIndicatorMaskingView.frame = bounds
         currentPageIndicatorContainerView.frame = bounds
         
+        updateCurrentPageDisplayWithAnimation(false)
+
         for (index, view) in pageIndicatorContainerView.subviews.enumerate() {
             view.frame = frameForPageIndicator(CGFloat(index), forNumberOfPages: numberOfPages)
         }
