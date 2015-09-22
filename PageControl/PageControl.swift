@@ -2,6 +2,9 @@ import UIKit
 
 @IBDesignable
 public class PageControl: UIControl {
+    
+    // MARK: - Interface
+    
     public var currentPage: Int {
         get {
             return Int(_currentPage)
@@ -45,8 +48,12 @@ public class PageControl: UIControl {
         let width = pageIndicatorSize * CGFloat(pageCount) + pageIndicatorSpacing * CGFloat(max(0, pageCount - 1))
         return CGSize(width: max(7, width), height: defaultControlHeight)
     }
+    // MARK: - Tint Color Overrides
+
     public var pageIndicatorTintColor: UIColor?
     public var currentPageIndicatorTintColor: UIColor?
+    // MARK: - Private
+    
     private var _currentPage: CGFloat = -1
     private var currentPageChangeAnimationDuration: NSTimeInterval = 0.3
 
@@ -58,6 +65,8 @@ public class PageControl: UIControl {
     private let pageIndicatorSize: CGFloat = 7
     private let pageIndicatorSpacing: CGFloat = 9
     private let defaultControlHeight: CGFloat = 37
+    
+    // MARK: - Initialization
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -91,6 +100,9 @@ public class PageControl: UIControl {
         updateCurrentPageDisplayWithAnimation(false)
     }
 }
+
+// MARK: - Current Page Display
+
 private extension PageControl {
     func updateCurrentPageDisplayWithAnimation(animated: Bool = true) {
         let frame = frameForPageIndicator(_currentPage, forNumberOfPages: numberOfPages)
@@ -104,12 +116,16 @@ private extension PageControl {
     }
 }
 
+// MARK: - Tint Color
+
 extension PageControl {
     public override func tintColorDidChange() {
         super.tintColorDidChange()
         updateColors()
     }
 }
+
+// MARK: - Subview Layout
 
 extension PageControl {
     public override func layoutSubviews() {
@@ -130,6 +146,8 @@ extension PageControl {
 
 }
 
+// MARK: - Auto Layout
+
 extension PageControl {
     public override func sizeThatFits(size: CGSize) -> CGSize {
         if numberOfPages == 0 || hidesForSinglePage && numberOfPages == 1 {
@@ -148,10 +166,14 @@ extension PageControl {
     }
 }
 
+// MARK: - Interface Builder
+
 extension PageControl {
     public override func prepareForInterfaceBuilder() {
     }
 }
+
+// MARK: - Control
 
 extension PageControl {
     override public var enabled: Bool {
@@ -160,6 +182,8 @@ extension PageControl {
         }
     }
 }
+
+// MARK: - Page Indicators
 
 private extension PageControl {
     func clearPageIndicators() {
@@ -188,6 +212,8 @@ private extension PageControl {
         return CGRect(x: horizontalOffset - size.width / 2.0 + horizontalCenter, y: verticalCenter, width: pageIndicatorSize, height: pageIndicatorSize)
     }
 }
+
+// MARK: - Appearance
 
 private extension PageControl {
     func updateColors() {
@@ -222,6 +248,8 @@ private extension PageControl {
         }
     }
 }
+
+// MARK: - Touch
 
 extension PageControl {
     public override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
