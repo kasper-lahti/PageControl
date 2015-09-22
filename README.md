@@ -14,24 +14,25 @@ import PageControl
 
 class ViewController: UIViewController, UIScrollViewDelegate {
     
-    let pageControl = PageControl()
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var pageControl: PageControl!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        pageControl.numberOfPages = 4
-        view.addSubview(pageControl)
+        scrollView.delegate = self
+        pageControl.numberOfPages = Int(scrollView.contentSize.width / scrollView.bounds.width)
+        pageControl.addTarget(self, action: "pageControlDidChangeCurrentPage:", forControlEvents: .ValueChanged)
     }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        var center = view.center
-        center.y += view.bounds.height / 2.0 - 50
-        pageControl.center = center
+
+    func pageControlDidChangeCurrentPage(pageControl: PageControl) {
+        scrollView.setContentOffset(CGPoint(x: scrollView.bounds.width * CGFloat(pageControl.currentPage), y: 0), animated: true)
     }
 
     func scrollViewDidScroll(scrollView: UIScrollView) {
-        let page = scrollView.contentOffset.x / scrollView.bounds.width
-        pageControl.setCurrentPage(page)
+        if scrollView.dragging || scrollView.decelerating {
+            let page = scrollView.contentOffset.x / scrollView.bounds.width
+            pageControl.setCurrentPage(page)
+        }
     }
 }
 ```
