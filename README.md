@@ -8,12 +8,31 @@
 [![GitHub release](https://img.shields.io/github/release/kasper-lahti/PageControl.svg?style=flat)](https://github.com/kasper-lahti/PageControl/releases)
 
 ## Usage Example
-### With a paginated `UIScrollView`
-Implement `UIScrollViewDelegate` and use the scroll view content offset to calculate the current page.
 ```swift
-func scrollViewDidScroll(scrollView: UIScrollView) {
-    let page = scrollView.contentOffset.x / scrollView.bounds.width
-    pageControl.setCurrentPage(page)
+import UIKit
+import PageControl
+
+class ViewController: UIViewController, UIScrollViewDelegate {
+    
+    let pageControl = PageControl()
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        pageControl.numberOfPages = 4
+        view.addSubview(pageControl)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        var center = view.center
+        center.y += view.bounds.height / 2.0 - 50
+        pageControl.center = center
+    }
+
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        let page = scrollView.contentOffset.x / scrollView.bounds.width
+        pageControl.setCurrentPage(page)
+    }
 }
 ```
 
