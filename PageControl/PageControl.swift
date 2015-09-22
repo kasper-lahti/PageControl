@@ -1,5 +1,7 @@
 import UIKit
 
+/// The `PageControl` displays a horizontal arrangement of circle outlines, each representing a page or section in your app. The currently viewed page is indicated by a filled circle.
+///
 /// - SeeAlso: `UIPageControl`
 @IBDesignable
 public class PageControl: UIControl {
