@@ -76,6 +76,8 @@ public class PageControl: UIControl {
     }
 
     /// Use to size the control to fit a certain number of pages.
+    /// - Parameter pageCount: A number of pages to calculate size from.
+    /// - Returns: Minimum size required to display all page indicators.
     public func sizeForNumberOfPages(pageCount: Int) -> CGSize {
         let width = pageIndicatorSize * CGFloat(pageCount) + pageIndicatorSpacing * CGFloat(max(0, pageCount - 1))
         return CGSize(width: max(7, width), height: defaultControlHeight)
