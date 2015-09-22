@@ -257,7 +257,7 @@ private extension PageControl {
         let clampedHorizontalIndex = max(0, min(page, CGFloat(numberOfPages) - 1))
         let size = sizeForNumberOfPages(numberOfPages)
         let horizontalCenter = bounds.width / 2.0
-        let verticalCenter = defaultControlHeight / 2.0 - pageIndicatorSize / 2.0
+        let verticalCenter = bounds.height / 2.0 - pageIndicatorSize / 2.0
         let horizontalOffset = (pageIndicatorSize + pageIndicatorSpacing) * clampedHorizontalIndex
         return CGRect(x: horizontalOffset - size.width / 2.0 + horizontalCenter, y: verticalCenter, width: pageIndicatorSize, height: pageIndicatorSize)
     }
