@@ -202,6 +202,8 @@ extension PageControl {
     public override func sizeThatFits(size: CGSize) -> CGSize {
         if numberOfPages == 0 || hidesForSinglePage && numberOfPages == 1 {
             return .zero
+        } else if let superview = superview {
+            return CGSize(width: superview.bounds.width, height: defaultControlHeight)
         } else {
             return sizeForNumberOfPages(numberOfPages)
         }
