@@ -7,6 +7,16 @@
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![GitHub release](https://img.shields.io/github/release/kasper-lahti/PageControl.svg?style=flat)](https://github.com/kasper-lahti/PageControl/releases)
 
+## Usage Example
+### With a paginated `UIScrollView`
+Implement `UIScrollViewDelegate` and use the scroll view content offset to calculate the current page.
+```swift
+func scrollViewDidScroll(scrollView: UIScrollView) {
+    let page = scrollView.contentOffset.x / scrollView.bounds.width
+    pageControl.setCurrentPage(page)
+}
+```
+
 -----------
 
 [![License](https://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat)](https://raw.githubusercontent.com/kasper-lahti/PageControl/master/LICENSE.md) 
