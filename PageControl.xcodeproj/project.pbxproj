@@ -7,15 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6B1D44E11BAD7DED007A8C36 /* PageControlParity5Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1D44E01BAD7DED007A8C36 /* PageControlParity5Tests.swift */; settings = {ASSET_TAGS = (); }; };
-		6B1D44E31BADAA64007A8C36 /* PageControlParityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1D44E21BADAA64007A8C36 /* PageControlParityTests.swift */; settings = {ASSET_TAGS = (); }; };
-		6B1D44E51BADB2CC007A8C36 /* PageControlParity2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1D44E41BADB2CC007A8C36 /* PageControlParity2Tests.swift */; settings = {ASSET_TAGS = (); }; };
-		6B37AB141BAAE15500460AF7 /* PageControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B37AB091BAAE15500460AF7 /* PageControl.framework */; settings = {ASSET_TAGS = (); }; };
-		6B37AB241BAAE18C00460AF7 /* PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B37AB231BAAE18C00460AF7 /* PageControl.swift */; settings = {ASSET_TAGS = (); }; };
-		6B6C3CE41BAF45BB00C86CF4 /* PageControlParity3Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6C3CE31BAF45BB00C86CF4 /* PageControlParity3Tests.swift */; settings = {ASSET_TAGS = (); }; };
-		6B6C3CE61BAFE31700C86CF4 /* PageControlParity4Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6C3CE51BAFE31700C86CF4 /* PageControlParity4Tests.swift */; settings = {ASSET_TAGS = (); }; };
-		6B6C3CF51BB1782D00C86CF4 /* PageControlTester.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B6C3CF41BB1782D00C86CF4 /* PageControlTester.xib */; settings = {ASSET_TAGS = (); }; };
-		6B6C3CF71BB17A4300C86CF4 /* PageControlXibTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6C3CF61BB17A4300C86CF4 /* PageControlXibTests.swift */; settings = {ASSET_TAGS = (); }; };
+		6B1D44E11BAD7DED007A8C36 /* PageControlParity5Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1D44E01BAD7DED007A8C36 /* PageControlParity5Tests.swift */; };
+		6B1D44E31BADAA64007A8C36 /* PageControlParityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1D44E21BADAA64007A8C36 /* PageControlParityTests.swift */; };
+		6B1D44E51BADB2CC007A8C36 /* PageControlParity2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1D44E41BADB2CC007A8C36 /* PageControlParity2Tests.swift */; };
+		6B37AB141BAAE15500460AF7 /* PageControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B37AB091BAAE15500460AF7 /* PageControl.framework */; };
+		6B37AB241BAAE18C00460AF7 /* PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B37AB231BAAE18C00460AF7 /* PageControl.swift */; };
+		6B6C3CE41BAF45BB00C86CF4 /* PageControlParity3Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6C3CE31BAF45BB00C86CF4 /* PageControlParity3Tests.swift */; };
+		6B6C3CE61BAFE31700C86CF4 /* PageControlParity4Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6C3CE51BAFE31700C86CF4 /* PageControlParity4Tests.swift */; };
+		6B6C3CF51BB1782D00C86CF4 /* PageControlTester.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B6C3CF41BB1782D00C86CF4 /* PageControlTester.xib */; };
+		6B6C3CF71BB17A4300C86CF4 /* PageControlXibTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6C3CF61BB17A4300C86CF4 /* PageControlXibTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -165,9 +165,11 @@
 				TargetAttributes = {
 					6B37AB081BAAE15500460AF7 = {
 						CreatedOnToolsVersion = 7.0;
+						LastSwiftMigration = 0800;
 					};
 					6B37AB121BAAE15500460AF7 = {
 						CreatedOnToolsVersion = 7.0;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -344,6 +346,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -361,6 +364,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = engineering.lahti.PageControl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -371,6 +375,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kasperlahti.PageControlTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -381,6 +386,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kasperlahti.PageControlTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

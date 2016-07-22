@@ -42,7 +42,7 @@ class PageControlParity4Tests: XCTestCase {
     
     func testPageControlSizeForNumberOfPages() {
         for pageCount in 0...200 {
-            XCTAssertEqual(uiPageControl.sizeForNumberOfPages(pageCount), klPageControl.sizeForNumberOfPages(pageCount))
+            XCTAssertEqual(uiPageControl.size(forNumberOfPages: pageCount), klPageControl.sizeForNumberOfPages(pageCount))
         }
     }
         
@@ -99,7 +99,7 @@ class PageControlParity4Tests: XCTestCase {
         XCTAssertEqual(uiPageControl.clearsContextBeforeDrawing, klPageControl.clearsContextBeforeDrawing)
         XCTAssertEqual(uiPageControl.hidden, klPageControl.hidden)
         XCTAssertEqual(uiPageControl.contentMode, klPageControl.contentMode)
-        XCTAssertEqual(uiPageControl.maskView == nil, klPageControl.maskView == nil)
+        XCTAssertEqual(uiPageControl.mask == nil, klPageControl.maskView == nil)
         XCTAssertEqual(uiPageControl.tintColor, klPageControl.tintColor)
         XCTAssertEqual(uiPageControl.tintAdjustmentMode, klPageControl.tintAdjustmentMode)
         
@@ -127,17 +127,17 @@ class PageControlParity4Tests: XCTestCase {
         
         // Separation of Concerns
         
-        XCTAssertEqual(uiPageControl.alignmentRectForFrame(.zero), klPageControl.alignmentRectForFrame(.zero))
-        XCTAssertEqual(uiPageControl.frameForAlignmentRect(.zero), klPageControl.frameForAlignmentRect(.zero))
+        XCTAssertEqual(uiPageControl.alignmentRect(forFrame: .zero), klPageControl.alignmentRectForFrame(.zero))
+        XCTAssertEqual(uiPageControl.frame(forAlignmentRect: .zero), klPageControl.frameForAlignmentRect(.zero))
         XCTAssertEqual(uiPageControl.alignmentRectInsets(), klPageControl.alignmentRectInsets())
         
         XCTAssertEqual(uiPageControl.intrinsicContentSize(), klPageControl.intrinsicContentSize())
         
-        XCTAssertEqual(uiPageControl.contentHuggingPriorityForAxis(.Horizontal), klPageControl.contentHuggingPriorityForAxis(.Horizontal))
-        XCTAssertEqual(uiPageControl.contentHuggingPriorityForAxis(.Vertical), klPageControl.contentHuggingPriorityForAxis(.Vertical))
+        XCTAssertEqual(uiPageControl.contentHuggingPriority(for: .horizontal), klPageControl.contentHuggingPriorityForAxis(.Horizontal))
+        XCTAssertEqual(uiPageControl.contentHuggingPriority(for: .vertical), klPageControl.contentHuggingPriorityForAxis(.Vertical))
         
-        XCTAssertEqual(uiPageControl.contentCompressionResistancePriorityForAxis(.Horizontal), klPageControl.contentCompressionResistancePriorityForAxis(.Horizontal))
-        XCTAssertEqual(uiPageControl.contentCompressionResistancePriorityForAxis(.Vertical), klPageControl.contentCompressionResistancePriorityForAxis(.Vertical))
+        XCTAssertEqual(uiPageControl.contentCompressionResistancePriority(for: .horizontal), klPageControl.contentCompressionResistancePriorityForAxis(.Horizontal))
+        XCTAssertEqual(uiPageControl.contentCompressionResistancePriority(for: .vertical), klPageControl.contentCompressionResistancePriorityForAxis(.Vertical))
         
     }
     
