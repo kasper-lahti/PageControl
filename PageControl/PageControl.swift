@@ -83,7 +83,7 @@ public class PageControl: UIControl {
     /// Use to size the control to fit a certain number of pages.
     /// - Parameter pageCount: A number of pages to calculate size from.
     /// - Returns: Minimum size required to display all page indicators.
-    public func sizeForNumberOfPages(_ pageCount: Int) -> CGSize {
+    public func size(forNumberOfPages pageCount: Int) -> CGSize {
         let width = pageIndicatorSize * CGFloat(pageCount) + pageIndicatorSpacing * CGFloat(max(0, pageCount - 1))
         return CGSize(width: max(7, width), height: defaultControlHeight)
     }
@@ -158,13 +158,13 @@ public class PageControl: UIControl {
 
 private extension PageControl {
     func updateCurrentPageDisplayWithAnimation(_ animated: Bool = true) {
-        let frame = frameForPageIndicator(_currentPage, forNumberOfPages: numberOfPages)
+        let pageFrame = frame(forPage: _currentPage, in: numberOfPages)
         if animated && currentPageChangeAnimationDuration > 0.0 {
             UIView.animate(withDuration: currentPageChangeAnimationDuration) {
-                self.currentPageIndicatorView.frame = frame
+                self.currentPageIndicatorView.frame = pageFrame
             }
         } else {
-            currentPageIndicatorView.frame = frame
+            currentPageIndicatorView.frame = pageFrame
         }
     }
 }
@@ -191,11 +191,11 @@ extension PageControl {
         updateCurrentPageDisplayWithAnimation(false)
 
         for (index, view) in pageIndicatorContainerView.subviews.enumerated() {
-            view.frame = frameForPageIndicator(CGFloat(index), forNumberOfPages: numberOfPages)
+            view.frame = frame(forPage: CGFloat(index), in: numberOfPages)
         }
 
         for (index, view) in pageIndicatorMaskingView.subviews.enumerated() {
-            view.frame = frameForPageIndicator(CGFloat(index), forNumberOfPages: numberOfPages)
+            view.frame = frame(forPage: CGFloat(index), in: numberOfPages)
         }
     }
 
@@ -210,7 +210,7 @@ extension PageControl {
         } else if let superview = superview {
             return CGSize(width: superview.bounds.width, height: defaultControlHeight)
         } else {
-            return sizeForNumberOfPages(numberOfPages)
+            return self.size(forNumberOfPages: numberOfPages)
         }
     }
     
@@ -218,7 +218,7 @@ extension PageControl {
         if numberOfPages == 0 || hidesForSinglePage && numberOfPages == 1 {
             return .zero
         } else {
-            return sizeForNumberOfPages(numberOfPages)
+            return size(forNumberOfPages: numberOfPages)
         }
     }
 }
@@ -256,13 +256,13 @@ private extension PageControl {
         }
     }
 
-    func frameForPageIndicator(_ page: CGFloat, forNumberOfPages numberOfPages: Int) -> CGRect {
+    func frame(forPage page: CGFloat, in numberOfPages: Int) -> CGRect {
         let clampedHorizontalIndex = max(0, min(page, CGFloat(numberOfPages) - 1))
-        let size = sizeForNumberOfPages(numberOfPages)
+        let totalSize = size(forNumberOfPages: numberOfPages)
         let horizontalCenter = bounds.width / 2.0
         let verticalCenter = bounds.height / 2.0 - pageIndicatorSize / 2.0
         let horizontalOffset = (pageIndicatorSize + pageIndicatorSpacing) * clampedHorizontalIndex
-        return CGRect(x: horizontalOffset - size.width / 2.0 + horizontalCenter, y: verticalCenter, width: pageIndicatorSize, height: pageIndicatorSize)
+        return CGRect(x: horizontalOffset - totalSize.width / 2.0 + horizontalCenter, y: verticalCenter, width: pageIndicatorSize, height: pageIndicatorSize)
     }
 }
 
@@ -306,7 +306,7 @@ private extension PageControl {
 
 extension PageControl {
     public override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if let touch = touches.first where isEnabled == true {
+        if let touch = touches.first, isEnabled == true {
             if touch.location(in: self).x < bounds.size.width / 2 {
                 if _currentPage - floor(_currentPage) > 0.01 {
                     _currentPage = floor(_currentPage)
