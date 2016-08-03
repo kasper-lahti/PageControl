@@ -214,7 +214,7 @@ extension PageControl {
         }
     }
     
-    public override func intrinsicContentSize() -> CGSize {
+    public override var intrinsicContentSize: CGSize {
         if numberOfPages == 0 || hidesForSinglePage && numberOfPages == 1 {
             return .zero
         } else {
@@ -296,7 +296,7 @@ private extension PageControl {
         for _ in 0..<numberOfPages {
             let view = UIView()
             view.clipsToBounds = true
-            view.backgroundColor = UIColor.black()
+            view.backgroundColor = UIColor.black
             pageIndicatorMaskingView.addSubview(view)
         }
     }
