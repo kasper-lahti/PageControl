@@ -6,6 +6,7 @@
 ## Installation
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![GitHub release](https://img.shields.io/github/release/kasper-lahti/PageControl.svg?style=flat)](https://github.com/kasper-lahti/PageControl/releases)
+[![Swift](https://img.shields.io/badge/swift-3-orange.svg?style=flat)](https://developer.apple.com/swift/)
 
 ## Usage Example
 ```swift
@@ -21,15 +22,15 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         super.viewDidLoad()
         scrollView.delegate = self
         pageControl.numberOfPages = Int(scrollView.contentSize.width / scrollView.bounds.width)
-        pageControl.addTarget(self, action: "pageControlDidChangeCurrentPage:", forControlEvents: .ValueChanged)
+        pageControl.addTarget(self, action: #selector(pageControlDidChangeCurrentPage(_:)), for: .valueChanged)
     }
 
-    func pageControlDidChangeCurrentPage(pageControl: PageControl) {
+    func pageControlDidChangeCurrentPage(_ pageControl: PageControl) {
         scrollView.setContentOffset(CGPoint(x: scrollView.bounds.width * CGFloat(pageControl.currentPage), y: 0), animated: true)
     }
 
-    func scrollViewDidScroll(scrollView: UIScrollView) {
-        if scrollView.dragging || scrollView.decelerating {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.isDragging || scrollView.isDecelerating {
             let page = scrollView.contentOffset.x / scrollView.bounds.width
             pageControl.setCurrentPage(page)
         }
