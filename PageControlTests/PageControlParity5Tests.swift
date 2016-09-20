@@ -39,7 +39,7 @@ class PageControlParity5Tests: XCTestCase {
     
     func testPageControlSizeForNumberOfPages() {
         for pageCount in 0...4 {
-            XCTAssertEqual(uiPageControl.size(forNumberOfPages: pageCount), klPageControl.sizeForNumberOfPages(pageCount))
+            XCTAssertEqual(uiPageControl.size(forNumberOfPages: pageCount), klPageControl.size(forNumberOfPages: pageCount))
         }
     }
     
