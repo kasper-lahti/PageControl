@@ -7,7 +7,7 @@ import UIKit
 ///
 /// - SeeAlso: `UIPageControl`
 @IBDesignable
-public class PageControl: UIControl {
+open class PageControl: UIControl {
     
     // MARK: - Interface
     
@@ -15,7 +15,7 @@ public class PageControl: UIControl {
     ///
     /// The default value is 0.
     @IBInspectable
-    public var currentPage: Int {
+    open var currentPage: Int {
         get {
             return Int(_currentPage)
         }
@@ -28,7 +28,7 @@ public class PageControl: UIControl {
     ///
     /// - Parameter currentPage: The current page indicator is filled if the value is .0, and about half filled if ±.25.
     /// - Parameter animated: `true` to animate the transition to the new page, `false` to make the transition immediate.
-    public func setCurrentPage(_ currentPage: CGFloat, animated: Bool = false) {
+    open func setCurrentPage(_ currentPage: CGFloat, animated: Bool = false) {
         let newPage = max(0, min(currentPage, CGFloat(numberOfPages - 1)))
         _currentPage = newPage
         updateCurrentPageDisplayWithAnimation(animated)
@@ -39,7 +39,7 @@ public class PageControl: UIControl {
     ///
     /// The default value is 0.
     @IBInspectable
-    public var numberOfPages: Int = 0 {
+    open var numberOfPages: Int = 0 {
         didSet {
             isHidden = hidesForSinglePage && numberOfPages <= 1
             if numberOfPages != oldValue {
@@ -62,7 +62,7 @@ public class PageControl: UIControl {
     ///
     /// The default is `false`.
     @IBInspectable
-    public var hidesForSinglePage: Bool = false {
+    open var hidesForSinglePage: Bool = false {
         didSet {
             isHidden = hidesForSinglePage && numberOfPages <= 1
         }
@@ -72,18 +72,18 @@ public class PageControl: UIControl {
     ///
     /// The default is `false`.
     @IBInspectable
-    public var defersCurrentPageDisplay: Bool = false
+    open var defersCurrentPageDisplay: Bool = false
     
     /// Updates the current page indicator to the current page.
     /// 
-    public func updateCurrentPageDisplay() {
+    open func updateCurrentPageDisplay() {
         updateCurrentPageDisplayWithAnimation()
     }
 
     /// Use to size the control to fit a certain number of pages.
     /// - Parameter pageCount: A number of pages to calculate size from.
     /// - Returns: Minimum size required to display all page indicators.
-    public func size(forNumberOfPages pageCount: Int) -> CGSize {
+    open func size(forNumberOfPages pageCount: Int) -> CGSize {
         let width = pageIndicatorSize * CGFloat(pageCount) + pageIndicatorSpacing * CGFloat(max(0, pageCount - 1))
         return CGSize(width: max(7, width), height: defaultControlHeight)
     }
@@ -94,29 +94,29 @@ public class PageControl: UIControl {
     ///
     /// The default is the control's `tintColor`.
     @IBInspectable
-    public var pageIndicatorTintColor: UIColor?
+    open var pageIndicatorTintColor: UIColor?
     
     /// When set this property overrides the current page indicator's fill color.
     ///
     /// The default is the control's `tintColor`.
     @IBInspectable
-    public var currentPageIndicatorTintColor: UIColor?
+    open var currentPageIndicatorTintColor: UIColor?
     
     // MARK: - Private
     
-    private var _currentPage: CGFloat = -1
-    private var currentPageChangeAnimationDuration: TimeInterval = 0.3
+    fileprivate var _currentPage: CGFloat = -1
+    fileprivate var currentPageChangeAnimationDuration: TimeInterval = 0.3
 
-    private var currentPageIndicatorContainerView = UIView()
-    private var currentPageIndicatorView = UIView()
-    private var pageIndicatorMaskingView = UIView()
-    private var pageIndicatorContainerView = UIView()
+    fileprivate var currentPageIndicatorContainerView = UIView()
+    fileprivate var currentPageIndicatorView = UIView()
+    fileprivate var pageIndicatorMaskingView = UIView()
+    fileprivate var pageIndicatorContainerView = UIView()
     
-    private let pageIndicatorSize: CGFloat = 7
-    private let pageIndicatorSpacing: CGFloat = 9
-    private let defaultControlHeight: CGFloat = 37
+    fileprivate let pageIndicatorSize: CGFloat = 7
+    fileprivate let pageIndicatorSpacing: CGFloat = 9
+    fileprivate let defaultControlHeight: CGFloat = 37
     
-    private let accessibilityPageControl = UIPageControl()
+    fileprivate let accessibilityPageControl = UIPageControl()
 
     // MARK: - Initialization
     
@@ -136,7 +136,7 @@ public class PageControl: UIControl {
         didInit()
     }
 
-    private func didInit() {
+    fileprivate func didInit() {
         currentPageIndicatorContainerView.addSubview(currentPageIndicatorView)
         currentPageIndicatorContainerView.layer.mask = pageIndicatorMaskingView.layer
         addSubview(currentPageIndicatorContainerView)
@@ -172,7 +172,7 @@ private extension PageControl {
 // MARK: - Tint Color
 
 extension PageControl {
-    public override func tintColorDidChange() {
+    open override func tintColorDidChange() {
         super.tintColorDidChange()
         updateColors()
     }
@@ -181,7 +181,7 @@ extension PageControl {
 // MARK: - Subview Layout
 
 extension PageControl {
-    public override func layoutSubviews() {
+    open override func layoutSubviews() {
         super.layoutSubviews()
         
         pageIndicatorContainerView.frame = bounds
@@ -204,7 +204,7 @@ extension PageControl {
 // MARK: - Auto Layout
 
 extension PageControl {
-    public override func sizeThatFits(_ size: CGSize) -> CGSize {
+    open override func sizeThatFits(_ size: CGSize) -> CGSize {
         if numberOfPages == 0 || hidesForSinglePage && numberOfPages == 1 {
             return .zero
         } else if let superview = superview {
@@ -214,7 +214,7 @@ extension PageControl {
         }
     }
     
-    public override var intrinsicContentSize: CGSize {
+    open override var intrinsicContentSize: CGSize {
         if numberOfPages == 0 || hidesForSinglePage && numberOfPages == 1 {
             return .zero
         } else {
@@ -226,14 +226,14 @@ extension PageControl {
 // MARK: - Interface Builder
 
 extension PageControl {
-    public override func prepareForInterfaceBuilder() {
+    open override func prepareForInterfaceBuilder() {
     }
 }
 
 // MARK: - Control
 
 extension PageControl {
-    override public var isEnabled: Bool {
+    override open var isEnabled: Bool {
         didSet {
             tintAdjustmentMode = isEnabled ? UIViewTintAdjustmentMode.normal : UIViewTintAdjustmentMode.dimmed
         }
@@ -305,7 +305,7 @@ private extension PageControl {
 // MARK: - Touch
 
 extension PageControl {
-    public override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+    open override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let touch = touches.first, isEnabled == true {
             if touch.location(in: self).x < bounds.size.width / 2 {
                 if _currentPage - floor(_currentPage) > 0.01 {
