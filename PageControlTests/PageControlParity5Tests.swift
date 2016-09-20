@@ -54,13 +54,13 @@ class PageControlParity5Tests: XCTestCase {
     }
     
     func testUIControlDefaultControlAttributes() {
-        XCTAssertEqual(uiPageControl.enabled, klPageControl.enabled)
-        XCTAssertEqual(uiPageControl.selected, klPageControl.selected)
-        XCTAssertEqual(uiPageControl.highlighted, klPageControl.highlighted)
+        XCTAssertEqual(uiPageControl.isEnabled, klPageControl.isEnabled)
+        XCTAssertEqual(uiPageControl.isSelected, klPageControl.isSelected)
+        XCTAssertEqual(uiPageControl.isHighlighted, klPageControl.isHighlighted)
         XCTAssertEqual(uiPageControl.contentVerticalAlignment, klPageControl.contentVerticalAlignment)
         XCTAssertEqual(uiPageControl.contentHorizontalAlignment, klPageControl.contentHorizontalAlignment)
         XCTAssertEqual(uiPageControl.state, klPageControl.state)
-        XCTAssertEqual(uiPageControl.tracking, klPageControl.tracking)
+        XCTAssertEqual(uiPageControl.isTracking, klPageControl.isTracking)
     }
     
     func testUIViewDefaults() {
@@ -70,14 +70,14 @@ class PageControlParity5Tests: XCTestCase {
         
         // UI Direction
         if #available(iOS 9.0, *) {
-            XCTAssertEqual(UIPageControl.userInterfaceLayoutDirectionForSemanticContentAttribute(uiPageControl.semanticContentAttribute), PageControl.userInterfaceLayoutDirectionForSemanticContentAttribute(klPageControl.semanticContentAttribute))
+            XCTAssertEqual(UIPageControl.userInterfaceLayoutDirection(for: uiPageControl.semanticContentAttribute), PageControl.userInterfaceLayoutDirection(for: klPageControl.semanticContentAttribute))
             XCTAssertEqual(uiPageControl.semanticContentAttribute, klPageControl.semanticContentAttribute)
         }
         
         // Event Related Behaviour
-        XCTAssertEqual(uiPageControl.userInteractionEnabled, klPageControl.userInteractionEnabled)
-        XCTAssertEqual(uiPageControl.multipleTouchEnabled, klPageControl.multipleTouchEnabled)
-        XCTAssertEqual(uiPageControl.exclusiveTouch, klPageControl.exclusiveTouch)
+        XCTAssertEqual(uiPageControl.isUserInteractionEnabled, klPageControl.isUserInteractionEnabled)
+        XCTAssertEqual(uiPageControl.isMultipleTouchEnabled, klPageControl.isMultipleTouchEnabled)
+        XCTAssertEqual(uiPageControl.isExclusiveTouch, klPageControl.isExclusiveTouch)
         
         // Resizing Behavior
         XCTAssertEqual(uiPageControl.autoresizesSubviews, klPageControl.autoresizesSubviews)
@@ -92,11 +92,11 @@ class PageControlParity5Tests: XCTestCase {
         XCTAssertEqual(uiPageControl.clipsToBounds, klPageControl.clipsToBounds)
         XCTAssertEqual(uiPageControl.backgroundColor, klPageControl.backgroundColor)
         XCTAssertEqual(uiPageControl.alpha, klPageControl.alpha)
-        XCTAssertEqual(uiPageControl.opaque, klPageControl.opaque)
+        XCTAssertEqual(uiPageControl.isOpaque, klPageControl.isOpaque)
         XCTAssertEqual(uiPageControl.clearsContextBeforeDrawing, klPageControl.clearsContextBeforeDrawing)
-        XCTAssertEqual(uiPageControl.hidden, klPageControl.hidden)
+        XCTAssertEqual(uiPageControl.isHidden, klPageControl.isHidden)
         XCTAssertEqual(uiPageControl.contentMode, klPageControl.contentMode)
-        XCTAssertEqual(uiPageControl.mask == nil, klPageControl.maskView == nil)
+        XCTAssertEqual(uiPageControl.mask == nil, klPageControl.mask == nil)
         XCTAssertEqual(uiPageControl.tintColor, klPageControl.tintColor)
         XCTAssertEqual(uiPageControl.tintAdjustmentMode, klPageControl.tintAdjustmentMode)
         
@@ -120,26 +120,26 @@ class PageControlParity5Tests: XCTestCase {
         
         XCTAssertEqual(uiPageControl.translatesAutoresizingMaskIntoConstraints, klPageControl.translatesAutoresizingMaskIntoConstraints)
         
-        XCTAssertEqual(UIPageControl.requiresConstraintBasedLayout(), PageControl.requiresConstraintBasedLayout())
+        XCTAssertEqual(UIPageControl.requiresConstraintBasedLayout, PageControl.requiresConstraintBasedLayout)
         
         // Separation of Concerns
         
-        XCTAssertEqual(uiPageControl.alignmentRect(forFrame: .zero), klPageControl.alignmentRectForFrame(.zero))
-        XCTAssertEqual(uiPageControl.frame(forAlignmentRect: .zero), klPageControl.frameForAlignmentRect(.zero))
-        XCTAssertEqual(uiPageControl.alignmentRectInsets(), klPageControl.alignmentRectInsets())
+        XCTAssertEqual(uiPageControl.alignmentRect(forFrame: .zero), klPageControl.alignmentRect(forFrame: .zero))
+        XCTAssertEqual(uiPageControl.frame(forAlignmentRect: .zero), klPageControl.frame(forAlignmentRect: .zero))
+        XCTAssertEqual(uiPageControl.alignmentRectInsets, klPageControl.alignmentRectInsets)
         
-        XCTAssertEqual(uiPageControl.intrinsicContentSize(), klPageControl.intrinsicContentSize())
+        XCTAssertEqual(uiPageControl.intrinsicContentSize, klPageControl.intrinsicContentSize)
         
-        XCTAssertEqual(uiPageControl.contentHuggingPriority(for: .horizontal), klPageControl.contentHuggingPriorityForAxis(.Horizontal))
-        XCTAssertEqual(uiPageControl.contentHuggingPriority(for: .vertical), klPageControl.contentHuggingPriorityForAxis(.Vertical))
+        XCTAssertEqual(uiPageControl.contentHuggingPriority(for: .horizontal), klPageControl.contentHuggingPriority(for: .horizontal))
+        XCTAssertEqual(uiPageControl.contentHuggingPriority(for: .vertical), klPageControl.contentHuggingPriority(for: .vertical))
         
-        XCTAssertEqual(uiPageControl.contentCompressionResistancePriority(for: .horizontal), klPageControl.contentCompressionResistancePriorityForAxis(.Horizontal))
-        XCTAssertEqual(uiPageControl.contentCompressionResistancePriority(for: .vertical), klPageControl.contentCompressionResistancePriorityForAxis(.Vertical))
+        XCTAssertEqual(uiPageControl.contentCompressionResistancePriority(for: .horizontal), klPageControl.contentCompressionResistancePriority(for: .horizontal))
+        XCTAssertEqual(uiPageControl.contentCompressionResistancePriority(for: .vertical), klPageControl.contentCompressionResistancePriority(for: .vertical))
         
     }
     
     func testUIResponderDefaults() {
-        XCTAssertEqual(uiPageControl.canBecomeFirstResponder(), klPageControl.canBecomeFirstResponder())
+        XCTAssertEqual(uiPageControl.canBecomeFirstResponder, klPageControl.canBecomeFirstResponder)
         XCTAssertEqual(uiPageControl.becomeFirstResponder(), klPageControl.becomeFirstResponder())
     }
 }
