@@ -47,8 +47,6 @@ public class PageControl: UIControl {
                 generatePageIndicators()
                 updateMaskSubviews()
                 invalidateIntrinsicContentSize()
-            }
-            if numberOfPages > oldValue {
                 updateCornerRadius()
                 updateColors()
             }
