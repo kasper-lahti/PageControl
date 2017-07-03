@@ -121,8 +121,8 @@ public class PageControl: UIControl {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        setContentHuggingPriority(UILayoutPriorityDefaultHigh, for: UILayoutConstraintAxis.vertical)
-        setContentHuggingPriority(UILayoutPriorityDefaultHigh, for: UILayoutConstraintAxis.horizontal)
+        setContentHuggingPriority(.defaultHigh, for: UILayoutConstraintAxis.vertical)
+        setContentHuggingPriority(.defaultHigh, for: UILayoutConstraintAxis.horizontal)
         
         autoresizingMask = [UIViewAutoresizing.flexibleWidth]
         
