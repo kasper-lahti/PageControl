@@ -102,19 +102,19 @@ public class PageControl: UIControl {
     
     // MARK: - Private
     
-    fileprivate var _currentPage: CGFloat = -1
-    fileprivate var currentPageChangeAnimationDuration: TimeInterval = 0.3
+    private var _currentPage: CGFloat = -1
+    private var currentPageChangeAnimationDuration: TimeInterval = 0.3
 
-    fileprivate var currentPageIndicatorContainerView = UIView()
-    fileprivate var currentPageIndicatorView = UIView()
-    fileprivate var pageIndicatorMaskingView = UIView()
-    fileprivate var pageIndicatorContainerView = UIView()
+    private var currentPageIndicatorContainerView = UIView()
+    private var currentPageIndicatorView = UIView()
+    private var pageIndicatorMaskingView = UIView()
+    private var pageIndicatorContainerView = UIView()
     
-    fileprivate let pageIndicatorSize: CGFloat = 7
-    fileprivate let pageIndicatorSpacing: CGFloat = 9
-    fileprivate let defaultControlHeight: CGFloat = 37
+    private let pageIndicatorSize: CGFloat = 7
+    private let pageIndicatorSpacing: CGFloat = 9
+    private let defaultControlHeight: CGFloat = 37
     
-    fileprivate let accessibilityPageControl = UIPageControl()
+    private let accessibilityPageControl = UIPageControl()
 
     // MARK: - Initialization
     
@@ -134,7 +134,7 @@ public class PageControl: UIControl {
         didInit()
     }
 
-    fileprivate func didInit() {
+    private func didInit() {
         currentPageIndicatorContainerView.addSubview(currentPageIndicatorView)
         currentPageIndicatorContainerView.layer.mask = pageIndicatorMaskingView.layer
         addSubview(currentPageIndicatorContainerView)
