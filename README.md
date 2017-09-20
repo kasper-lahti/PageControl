@@ -6,7 +6,7 @@
 ## Installation
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![GitHub release](https://img.shields.io/github/release/kasper-lahti/PageControl.svg?style=flat)](https://github.com/kasper-lahti/PageControl/releases)
-[![Swift](https://img.shields.io/badge/swift-3-orange.svg?style=flat)](https://developer.apple.com/swift/)
+[![Swift](https://img.shields.io/badge/swift-4-orange.svg?style=flat)](https://developer.apple.com/swift/)
 
 ## Usage Example
 ```swift
