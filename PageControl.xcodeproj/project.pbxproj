@@ -65,8 +65,8 @@
 		6B37AAFF1BAAE15500460AF7 = {
 			isa = PBXGroup;
 			children = (
-				6B37AB0B1BAAE15500460AF7 /* PageControl */,
-				6B37AB171BAAE15500460AF7 /* PageControlTests */,
+				6B37AB0B1BAAE15500460AF7 /* Sources */,
+				6B37AB171BAAE15500460AF7 /* Tests */,
 				6B37AB0A1BAAE15500460AF7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -80,7 +80,23 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		6B37AB0B1BAAE15500460AF7 /* PageControl */ = {
+		6B37AB0B1BAAE15500460AF7 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				A7759A532705E4B400D0F3D7 /* PageControl */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		6B37AB171BAAE15500460AF7 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				A7759A542705E4C000D0F3D7 /* PageControlTests */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		A7759A532705E4B400D0F3D7 /* PageControl */ = {
 			isa = PBXGroup;
 			children = (
 				6B37AB231BAAE18C00460AF7 /* PageControl.swift */,
@@ -89,7 +105,7 @@
 			path = PageControl;
 			sourceTree = "<group>";
 		};
-		6B37AB171BAAE15500460AF7 /* PageControlTests */ = {
+		A7759A542705E4C000D0F3D7 /* PageControlTests */ = {
 			isa = PBXGroup;
 			children = (
 				6B6C3CF61BB17A4300C86CF4 /* PageControlXibTests.swift */,
@@ -364,7 +380,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = PageControl/Info.plist;
+				INFOPLIST_FILE = Sources/PageControl/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = engineering.lahti.PageControl;
@@ -384,7 +400,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = PageControl/Info.plist;
+				INFOPLIST_FILE = Sources/PageControl/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = engineering.lahti.PageControl;
@@ -398,7 +414,7 @@
 		6B37AB211BAAE15500460AF7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				INFOPLIST_FILE = PageControlTests/Info.plist;
+				INFOPLIST_FILE = Tests/PageControlTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kasperlahti.PageControlTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -409,7 +425,7 @@
 		6B37AB221BAAE15500460AF7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				INFOPLIST_FILE = PageControlTests/Info.plist;
+				INFOPLIST_FILE = Tests/PageControlTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kasperlahti.PageControlTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
