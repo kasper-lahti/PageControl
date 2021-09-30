@@ -175,11 +175,11 @@
 			};
 			buildConfigurationList = 6B37AB031BAAE15500460AF7 /* Build configuration list for PBXProject "PageControl" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
+				Base,
 			);
 			mainGroup = 6B37AAFF1BAAE15500460AF7;
 			productRefGroup = 6B37AB0A1BAAE15500460AF7 /* Products */;
