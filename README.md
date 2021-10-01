@@ -4,9 +4,10 @@
 <h1 align="center">Page Control</h1>
 
 ## Installation
+[![Swift Package Manager compatible](https://img.shields.io/badge/Swift_Package_Manager-compatible-orange?style=flat)](https://swift.org/package-manager/)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![GitHub release](https://img.shields.io/github/release/kasper-lahti/PageControl.svg?style=flat)](https://github.com/kasper-lahti/PageControl/releases)
-[![Swift](https://img.shields.io/badge/swift-4-orange.svg?style=flat)](https://developer.apple.com/swift/)
+[![Swift](https://img.shields.io/badge/swift-5-orange.svg?style=flat)](https://developer.apple.com/swift/)
 
 ## Usage Example
 ```swift
@@ -25,7 +26,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         pageControl.addTarget(self, action: #selector(pageControlDidChangeCurrentPage(_:)), for: .valueChanged)
     }
 
-    func pageControlDidChangeCurrentPage(_ pageControl: PageControl) {
+    @objc func pageControlDidChangeCurrentPage(_ pageControl: PageControl) {
         scrollView.setContentOffset(CGPoint(x: scrollView.bounds.width * CGFloat(pageControl.currentPage), y: 0), animated: true)
     }
 
